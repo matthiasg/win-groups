@@ -1,0 +1,20 @@
+{
+  "name": "win-groups",
+  "version": "0.1.0",
+  "description": "Test windows user group memberships against local machine groups",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@dev.curasystems.com:mgoetzke/win-groups.git"
+  },
+  "keywords": [
+    "windows",
+    "groups",
+    "authentication"
+  ],
+  "author": "Matthias Goetzke",
+  "license": "BSD-2-Clause"
+}

@@ -2,8 +2,8 @@
 
 var winGroups = require('./index');
 
-var username = process.env.username;
-var testGroup = 'testg';
+var username = 'NT AUTHORITY\\INTERACTIVE';
+var testGroup = 'Users';
 
 winGroups.isInGroup({user:username, group:testGroup}, function(err,isInGroup){
   if(err){

@@ -1,6 +1,6 @@
 'use strict';
 
-var winGroups = require('.');
+var winGroups = require('./index');
 
 var username = process.env.username;
 var testGroup = 'Users';

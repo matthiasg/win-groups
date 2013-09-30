@@ -4,7 +4,11 @@ var child_process = require('child_process');
 
 module.exports.isInGroup = function(data,callback){
 
-  child_process.exec('net localgroup ' + data.group, function(error,stdout){
+  if(process.platform !== 'win32'){
+    return callback('This command only works on windows', false);
+  }
+
+  child_process.exec('net localgroup "' + data.group + '"', function(error,stdout){
     if(error)
       return callback(error,false);
 

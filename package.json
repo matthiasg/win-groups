@@ -4,7 +4,7 @@
   "description": "Test windows user group memberships against local machine groups",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +13,8 @@
   "keywords": [
     "windows",
     "groups",
-    "authentication"
+    "authentication",
+    "localgroups"
   ],
   "author": "Matthias Goetzke",
   "license": "BSD-2-Clause"

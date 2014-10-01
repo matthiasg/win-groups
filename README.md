@@ -32,7 +32,7 @@ Local Windows Group Membership manipulation via 'net localgroup'
 - remove account name from a spefic group (deleteGroupMember)
 - get all members of a group (getGroupMembers)
 
-## Example: Add Account Name to Group
+## Example: Add Member to Group
 
     var winGroups = require('win-groups');
 
@@ -44,7 +44,7 @@ Local Windows Group Membership manipulation via 'net localgroup'
   		console.log("Group member added");
   	});  
 
-## Example: Delete Account Name from Group
+## Example: Delete Member from Group
 
     var winGroups = require('win-groups');
 

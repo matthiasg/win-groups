@@ -3,6 +3,10 @@ win-groups
 
 Local Windows Group Membership manipulation via 'net localgroup'
 
+# Installation
+
+    npm install win-groups
+
 ## Example:
 
     var winGroups = require('win-groups');
@@ -11,11 +15,11 @@ Local Windows Group Membership manipulation via 'net localgroup'
 	var domain = process.env.userdomain;
 	var group = 'Users';
 
-    winGroups.isInGroup({user:username, domain: domain, group:group}, function(err,isInGroup){
+    winGroups.isGroupMember({user: username, domain: domain, group: group}, function(err,isGroupMember){
       if(err)
         return console.log(err);
 
-      console.log('Is in group:', isInGroup);
+      console.log('Is in group:', isGroupMember);
     });
 
 > Note: This would test whether the currently logged on user is part of the Users group.
@@ -36,8 +40,8 @@ Local Windows Group Membership manipulation via 'net localgroup'
 	var domain = process.env.userdomain;
 	var group = 'Users';
 
-  	winGroups.addUserGroup({user:username, domain: domain, group:group},function(err,msg){
-  		console.log("User group assignement added");
+  	winGroups.addUserGroup({user: username, domain: domain, group: group},function(err,msg){
+  		console.log("Group member added");
   	});  
 
 ## Example: Delete Account Name from Group
@@ -48,8 +52,8 @@ Local Windows Group Membership manipulation via 'net localgroup'
 	var domain = process.env.userdomain;
 	var group = 'Users';
 
-  	winGroups.deleteUserGroup({user:username, domain: domain, group:group},function(err,msg){
-  		console.log("User group assignement deleted");
+  	winGroups.deleteUserGroup({user: username, domain: domain, group: group},function(err,msg){
+  		console.log("Group member deleted");
   	});  
 
 ## Example: Get Members of a Group
@@ -60,7 +64,7 @@ Local Windows Group Membership manipulation via 'net localgroup'
 	var domain = process.env.userdomain;
 	var group = 'Users';
 
-	winGroups.getGroupMembers({group:group},function(err,users){
+	winGroups.getGroupMembers({group: group},function(err,users){
 		if(err)
 			return console.log(err);		
 

@@ -2,7 +2,7 @@
 
 var child_process = require('child_process');
 
-module.exports.addUserGroup = function(data,callback){
+module.exports.addGroupMember = function(data,callback){
   if(!data.user){
     return callback('data.user is not defined', false);
   }
@@ -26,7 +26,7 @@ module.exports.addUserGroup = function(data,callback){
   });
 };
 
-module.exports.deleteUserGroup = function(data,callback){
+module.exports.deleteGroupMember = function(data,callback){
   if(!data.user){
     return callback('data.user is not defined', false);
   }
@@ -81,7 +81,6 @@ module.exports.getGroupMembers = function(data,callback){
   });
 };
 
-
 module.exports.isInGroup = function(data,callback){
   if(!data.user){
     return callback('data.user is not defined', false);
@@ -108,6 +107,8 @@ module.exports.isInGroup = function(data,callback){
 
   });
 };
+
+module.exports.isGroupMember = module.exports.isInGroup;
 
 function retrieveTextAfterDividerLineKeepNewlineBeforeFirstLine(netLocalgroupResponseText){
   var startOfDivider = netLocalgroupResponseText.indexOf('\n-');

@@ -1,4 +1,4 @@
-var winGroups = require('win-groups');
+var winGroups = require('./index');
 
 var username = process.env.username;
 var domain = process.env.userdomain;
@@ -7,7 +7,7 @@ var group = 'Users';
 console.log("Username: " + username);
 console.log("Domain: " + domain);
 
-function listGroupUsers(group){
+function listUsersMembers(group){
 	winGroups.getGroupMembers({group:group},function(err,users){
 	  if(err)
 	    return console.log(err);		
@@ -22,23 +22,23 @@ function listGroupUsers(group){
 	});
 }
 
-listGroupUsers(group);
+listUsersMembers(group);
 
-winGroups.isInGroup({user:username, group:group, domain: domain}, function(err,isInGroup){
+winGroups.isGroupMember({user: username, domain: domain, group: group}, function(err,isGroupMember){
   if(err)
     return console.log(err);
   
-  console.log('Is in group:', isInGroup);
+  console.log('Is in group:', isGroupMember);
 
-  if(isInGroup){
-  	winGroups.deleteUserGroup({user:username, group:group, domain: domain},function(err,msg){
-  		console.log("User group assignement deleted");
-  		listGroupUsers(group);
+  if(isGroupMember){
+  	winGroups.deleteGroupMember({user: username, domain: domain, group: group},function(err,msg){
+  		console.log("Group member deleted");
+  		listUsersMembers(group);
   	});
   } else {
-  	winGroups.addUserGroup({user:username, group:group, domain: domain},function(err,msg){
-  		console.log("User group assignement added");
-  		listGroupUsers(group);
+  	winGroups.addGroupMember({user: username, domain: domain, group: group},function(err,msg){
+  		console.log("Group member added");
+  		listUsersMembers(group);
   	});  	
   }
 });

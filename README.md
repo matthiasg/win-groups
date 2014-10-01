@@ -26,11 +26,11 @@ Local Windows Group Membership manipulation via 'net localgroup'
 > Windows 8: This does not seem to work on Win8 anymore though since the users are not in automatically part of the Users group anymore.. 
 
 # Features
-- domain account name support
-- check if account name belongs to a specific group
-- get account names in a specific group
-- add account name to a specific group
-- remove account name from a spefic group
+- domain support
+- check if account name belongs to a specific group (isGroupMember)
+- add member to a group (addGroupMember)
+- remove account name from a spefic group (deleteGroupMember)
+- get all members of a group (getGroupMembers)
 
 ## Example: Add Account Name to Group
 
@@ -40,7 +40,7 @@ Local Windows Group Membership manipulation via 'net localgroup'
 	var domain = process.env.userdomain;
 	var group = 'Users';
 
-  	winGroups.addUserGroup({user: username, domain: domain, group: group},function(err,msg){
+  	winGroups.addGroupMember({user: username, domain: domain, group: group},function(err,msg){
   		console.log("Group member added");
   	});  
 
@@ -52,7 +52,7 @@ Local Windows Group Membership manipulation via 'net localgroup'
 	var domain = process.env.userdomain;
 	var group = 'Users';
 
-  	winGroups.deleteUserGroup({user: username, domain: domain, group: group},function(err,msg){
+  	winGroups.deleteGroupMember({user: username, domain: domain, group: group},function(err,msg){
   		console.log("Group member deleted");
   	});  
 

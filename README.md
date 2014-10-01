@@ -52,7 +52,7 @@ Local Windows Group Membership manipulation via 'net localgroup'
   		console.log("User group assignement deleted");
   	});  
 
-## Example: Get Account Names of a Group
+## Example: Get Members of a Group
 
     var winGroups = require('win-groups');
 

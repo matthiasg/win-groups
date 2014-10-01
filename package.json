@@ -1,14 +1,14 @@
 {
   "name": "win-groups",
-  "version": "0.1.0",
-  "description": "Test windows user group memberships against local machine groups",
+  "version": "0.2.0",
+  "description": "Manipulate and query local machine groups on windows systems",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git@dev.curasystems.com:mgoetzke/win-groups.git"
+    "url": "https://github.com/matthiasg/win-groups.git"
   },
   "keywords": [
     "windows",

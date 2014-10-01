@@ -1,7 +1,7 @@
 {
   "name": "win-groups",
   "version": "0.2.0",
-  "description": "Manupulate local machine groups on windows systems",
+  "description": "Manipulate and query local machine groups on windows systems",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"

@@ -76,3 +76,8 @@ Local Windows Group Membership manipulation via 'net localgroup'
 		});
 		console.log("------------------------\n");		
 	}); 	  	
+
+
+# TODO
+- create group
+- delete group (with check)
